@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pushbar.js@1.0.0/src/pushbar.min.css">
+    <link rel="preload" href="css/diseño.css" as="style">
+    <link rel="stylesheet" href="css/diseño.css">
+    <title>PC-NEST Inicio</title>
+
+</head>
+<body>
+    <header class="flex-container">
+        <div>
+            <a class="logo" href="main.html"> PC-Nest </a>
+        </div>
+        <div class="btn-carrito-contenedor">
+            <button data-pushbar-target="mypushbar1" class="icono-carrito">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="6" cy="19" r="2" />
+                        <circle cx="17" cy="19" r="2" />
+                        <path d="M17 17h-11v-14h-2" />
+                        <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                        <path d="M15 6h6m-3 -3v6" />
+                    </svg>
+            </button>
+        </div>
+        <div class="buscar">
+            <input id="barra-busquedas" class="barra-busqueda" type="text" placeholder="Buscar" required>
+    </header>
+
+    <main class="contenido-principal">
+        <section class="contenedor-checkbox">
+                <form class="categorias-checkbox">
+                        <label for="todos-checkbox">
+                            <input name="identificador" type="radio" id="todos-checkbox" class="categoria" category="Todos" checked> Todos los productos
+                        </label>
+                        <label for="mothers-checkbox">
+                            <input name="identificador" type="radio" id="mothers-checkbox" class="categoria" category="Mother"> Motherboards
+                        </label>
+                        <label for="tarjetas-checkbox">
+                            <input name="identificador" type="radio" id="tarjetas-checkbox" class="categoria" category="PlacaDeVideo"> Tarjetas Gráficas
+                        </label>
+                        <label for="procesadores-checkbox">
+                            <input name="identificador" type="radio" id="procesadores-checkbox" class="categoria" category="Procesador"> Procesadores
+                        </label>
+                </form>
+        </section>
+
+    <section id="listado-productos">
+        <h1 class="titulo"> Productos </h1>
+        <div id="stock" class="productos"></div>
+
+        <div data-pushbar-id="mypushbar1" data-pushbar-direction="right" class="pushbar-carrito">
+                <div  class="carrito-container"> 
+                    <h3 class="titulo-carrito">Productos en Carrito</h3>
+                    <div id="contenido-carrito"></div>
+                    <a id="btn-vaciar-carrito" class="btn-vaciar">Vaciar</a>
+                    <button id="btn-ir-compra" class="btn-hacia-compra" onclick="location.href='compra.html'">Comprar</button>
+                </div>
+        </div>
+
+    </section>
+    </main>
+
+    <footer class="footer"> 2021-2023 ® Todos los derechos reservados. Buenos Aires, Argentina. </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/simulador.js"></script>
+    <script src="js/busquedaNombre.js"></script>
+    <script src="js/busquedaCategoria.js"></script>
+    <script src="js/formulario.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pushbar.js@1.0.0/src/pushbar.min.js"></script>
+    <script type="text/javascript">
+        let pushbar = new Pushbar({
+            blur: true,
+            overlay: true,
+        });
+    </script>
+</body>
+</html>
